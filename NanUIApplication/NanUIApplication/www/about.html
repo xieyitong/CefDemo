@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/base.css" rel="stylesheet" />
+    <link href="Content/about.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.2.3.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/base.js"></script>
+    <script src="Scripts/about.js"></script>
+    <script>
+        function loadinfo(verstr, osstr, userstr) {
+            window.ver.innerText = verstr;
+            window.os.innerText = osstr;
+            window.user.innerText = userstr;
+        }
+    </script>
+</head>
+<body>
+    <nav class="ui-sys-bar">
+        <h2 id="header-title">关于窗口</h2>
+        <div class="ui-sys-commands">
+            <span class="-nanui-minimize">&#48;</span>
+            <span class="-nanui-maximize">&#49;</span>
+            <span class="-nanui-close">&#114;</span>
+        </div>
+    </nav>
+    <div class="ui-main-mask">
+    </div>
+
+    <div class="ui-main-container">
+        <div class="container-fluid">
+            <ul class="list-unstyled">
+                <li>版本：<span id="ver" class="badge"></span></li>
+                <li>系统：<span id="os" class="badge"></span></li>
+                <li>用户：<span id="user" class="badge"></span></li>
+            </ul>
+        </div>
+    </div>
+    <footer class="ui-footer-bar">
+        <button class="btn btn-primary" onclick="javascript:history.back(-1);">返  回</button>
+    </footer>
+</body>
+</html>

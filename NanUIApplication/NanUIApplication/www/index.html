@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/base.css" rel="stylesheet" />
+    <link href="Content/about.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.2.3.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/base.js"></script>
+    <script src="Scripts/about.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="ui-sys-bar">
+            <h2 id="header-title">CEF窗口测试-顺丰快递查询</h2>
+            <div class="ui-sys-commands">
+                <span class="-nanui-minimize">&#48;</span>
+                <span class="-nanui-maximize">&#49;</span>
+                <span class="-nanui-close">&#114;</span>
+            </div>
+        </nav>
+
+        <div class="row">
+            <div class="col-md-8">
+                 <label class="sr-only" for="expressno">顺丰单号</label>
+                <input id="expressno" type="text" class="form-control" placeholder="顺丰单号">
+            </div>
+            <div style="color:#0094ff" class="col-md-4">
+                <button id="querybtn" onclick="setValue(expressno.value)" class="btn btn-default">查询</button>
+            </div>
+        </div>
+
+        <div>
+            <p id="queryresult"></p>
+        </div>
+
+    </div>
+    <footer class="ui-footer-bar">
+        <button class="btn btn-info" onclick="about()">
+            关于窗口
+        </button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-danger -nanui-close">
+            关闭窗口
+        </button>
+    </footer>
+</body>
+</html>
+
+<script>
+        function getExpress() {
+            return window.expressno.value;
+        }
+
+        function about() {
+            window.location.href = 'about.html';
+        }
+        function setV(value) {
+            //window.queryresult.value = value;
+            arr = value.split(";");
+            $.each(arr, function (i, val) {
+                $("#queryresult").append(" <b>" + val + "</b></br>");
+            });
+
+        }
+        function setValue(value) {
+            if (value == expressno.defaultValue)
+                value = "";
+            hostTest.setVal(value);
+        }
+</script>
